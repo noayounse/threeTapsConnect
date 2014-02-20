@@ -1,4 +1,4 @@
-threeTapsConnect
-================
+ThreeTapsP5
+===========
 
-A simple wrapper for 3Taps and Processing
+3Taps + Processing

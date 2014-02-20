@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>##library.name##</title>
+		<meta name="description" content="A library for the Processing programming environment" />
+		<meta name="keywords" content="processing.org, library, ##library.keywords##" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<meta name="ROBOTS" content="index,follow,archive" />
+		<meta http-equiv="imagetoolbar" content="false" />
+		<meta name="MSSmartTagsPreventParsing" content="true" />
+		<meta name="author" content="##author.name##" />
+		<meta name="Rating" content="General" />
+		<meta name="revisit-after" content="7 Days" />
+		<meta name="doc-class" content="Living Document" />
+		<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+	</head>
+	<body>
+		<div id="container">
+
+			<div id="header">
+				<h1>##library.name##</h1>
+			</div>
+
+			<div id="menu" class="clear">
+				<ul>
+					<li>
+						<a href="#about">About</a> \
+					</li>
+					<li>
+						<a href="#download">Download</a> \
+					</li>
+					<li>
+						<a href="#download">Installation</a> \
+					</li>
+					<li>
+						<a href="#examples">Examples</a> \
+					</li>
+					<li>
+						<a href="./reference/index.html" target="_blank">Reference</a>
+					</li>
+					<!-- <li><a href="#demos">Demos</a> \ </li> -->
+					<!-- <li><a href="#misc">Misc</a> \ </li> -->
+					<!-- <li><a href="#images">Images</a> \ </li> -->
+				</ul>
+			</div>
+
+			<div id="content" class="clear">
+
+				<div id="about">
+					<h2>##library.name##</h2>
+					<p>
+						A library by <a href="##author.url##">##author.name##</a> for the <a href="http://www.processing.org" target="_blank">Processing</a> programming environment.
+						<br>
+						Last update, ##date##.
+					</p>
+					<p>
+						##library.sentence##
+						<br>
+						<br>
+						##library.paragraph##
+						<br>
+						<br>
+						Get an API key from the <a href="https://developer.3taps.com/signup">3taps</a> website.
+						<br>
+						<br>
+						Contributed libraries are developed, documented, and maintained by members of the Processing community. Further directions are included with each library. For feedback and support, please post to the Discourse. We strongly encourage all libraries to be open source, but not all of them are.
+						<br>
+						<br>
+
+					</p>
+				</div>
+
+				<div id="download" class="clear">
+					<h2>Download</h2>
+					<p>
+						Download ##library.name## version ##library.prettyVersion## (##library.version##) in
+						<a href="./download/##project.name##-##library.version##.zip">.zip format</a>.
+					</p>
+					<h2>Installation</h2>
+					<p>
+						Unzip and put the extracted ##project.name## folder into the libraries folder of your Processing sketches. Reference and examples are included in the ##project.name## folder.
+					</p>
+				</div>
+
+				<div id="resources">
+					<p>
+						<strong>Keywords</strong>. ##library.keywords##
+					</p>
+					<p>
+						<strong>Reference</strong>. Have a look at the javadoc reference <a href="./reference/index.html" target="_blank">here</a>. A copy of the reference is included in the .zip as well.
+					</p>
+					<p>
+						<strong>Source</strong>. The source code of ##library.name## is available at <a href="##source.url##">##source.host##</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.
+					</p>
+				</div>
+
+				<div id="examples" class="clear">
+					<h2>Examples</h2>
+					<p>
+						Find a list of examples in the current distribution of ##library.name##, or have a look at them by following the links below.
+					</p>
+					<ul>
+						##examples##
+					</ul>
+
+					<br>
+					<br>
+					<br>
+					<br>
+					<h2>Some quick instructions</h2>
+					<br>
+					<i>// import the library</i>
+					<br>
+					import threeTapsConnect.*;
+					<br>
+					<br>
+					<i>// initiate it in the setup()</i>
+					<br>
+					ThreeTaps.init(this);
+					<br>
+					<br>
+					<i>// set the API key.  get one from <a href="https://3taps.com/developers-overview.php">here</a></i>
+					<br>
+					ThreeTaps.setAPIKey("INSERT API KEY HERE");
+					<br>
+					<br>
+					<i>// make a new ThreeTapsQuery object</i>
+					<br>
+					ThreeTapsQuery query = new ThreeTapsQuery();
+					<br>
+					<br>
+					<i>// the basic search params.  see the docs and/or example for more details</i>
+					<br>
+					query.setRPP(2); // the count
+					<br>
+					query.setHeading("\"mountain bike\"");
+					<br>
+					query.setLat(37.77); // latitude
+					<br>
+					query.setLon(-122.427); // longitude
+					<br>
+					query.hasImage(true);
+					<br>
+					<i>// distance only works when lat and lon are set</i>
+					query.setSortMode(query.DISTANCE); 
+					<br>
+					<br>
+					<i>// perform the query</i>
+					<br>
+					ThreeTaps.query(query);
+					<br>
+					<br>
+					<i>// extract the ThreeTapsResult and ThreeTapsLocation objects</i>
+					<br>
+					for (ThreeTapsResult result : query.results) {
+					<br>
+					&nbsp;&nbsp;println(result);
+					<br>
+					&nbsp;&nbsp;<i>//if the ThreeTapsResult has a valid location, that will be stored in the location object</i>
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;if (result.location != null) print(result.location);
+					<br>
+					}
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+				</div>
+
+				<div id="info">
+					<h2>Tested</h2>
+					<p>
+						<!-- on which platform has the library been tested? -->
+						<strong>Platform</strong> ##tested.platform##
+
+						<!-- which processing version did you use for testing your library? -->
+						<br />
+						<strong>Processing</strong> ##tested.processingVersion##
+
+						<!-- does your library depend on any other library or framework? -->
+						<br />
+						<strong>Dependencies</strong> ##library.dependencies##
+					</p>
+				</div>
+
+				<!-- use the demos section for a list of applets run in a browser. -->
+				<!--
+				<div id="demos" class="clear">
+				<h2>demos</h2>
+				<p>
+				find a list of online applet demos below.
+
+				<ul>
+				<li><a href="./applets/demo/index.html">demo</a></li>
+				</ul>
+				</p>
+				</div>
+				-->
+
+				<!-- use the misc section for other relevant information. Activate the link to the misc section in the menu above. -->
+				<!--
+				<div id="misc" class="clear">
+				<p></p>
+				</div>
+				-->
+
+				<!-- use the images/screenshots section. Activate the link to the misc section in the menu above. -->
+				<!--
+				<div id="images" class="clear">
+				</div>
+				-->
+
+				<br class="clear" />
+			</div>
+
+			<div id="footer">
+				<p>
+					by ##author.name##, ##copyright##.
+				</p>
+			</div>
+		</div>
+
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-12853068-1', 'duckduckpenguin.com');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
