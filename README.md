@@ -26,7 +26,8 @@ query.setHeading("\"mountain bike\""); <br>
 query.setLat(37.77); // latitude <br>
 query.setLon(-122.427); // longitude <br>
 query.hasImage(true); <br>
-// distance only works when lat and lon are set query.setSortMode(query.DISTANCE); 
+// distance only works when lat and lon are set <br>
+query.setSortMode(query.DISTANCE); 
 
 // perform the query <br>
 ThreeTaps.query(query); 
