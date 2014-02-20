@@ -14,7 +14,7 @@ import threeTapsConnect.*;
 // initiate it in the setup() <br>
 ThreeTaps.init(this); 
 
-// set the API key. get one from here <br>
+// set the API key. get one from <a href="https://developer.3taps.com/signup">3taps.com</a> <br>
 ThreeTaps.setAPIKey("INSERT API KEY HERE"); 
 
 // make a new ThreeTapsQuery object <br>
