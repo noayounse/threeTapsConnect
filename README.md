@@ -20,20 +20,20 @@ ThreeTaps.setAPIKey("INSERT API KEY HERE");
 // make a new ThreeTapsQuery object <br>
 ThreeTapsQuery query = new ThreeTapsQuery(); 
 
-// the basic search params. see the docs and/or example for more details 
-query.setRPP(2); // the count 
-query.setHeading("\"mountain bike\""); 
-query.setLat(37.77); // latitude 
-query.setLon(-122.427); // longitude 
-query.hasImage(true); 
+// the basic search params. see the docs and/or example for more details <br>
+query.setRPP(2); // the count <br>
+query.setHeading("\"mountain bike\""); <br>
+query.setLat(37.77); // latitude <br>
+query.setLon(-122.427); // longitude <br>
+query.hasImage(true); <br>
 // distance only works when lat and lon are set query.setSortMode(query.DISTANCE); 
 
-// perform the query 
+// perform the query <br>
 ThreeTaps.query(query); 
 
-// extract the ThreeTapsResult and ThreeTapsLocation objects 
-for (ThreeTapsResult result : query.results) {
-  println(result);
-//if the ThreeTapsResult has a valid location, that will be stored in the location object
-  if (result.location != null) print(result.location); 
+// extract the ThreeTapsResult and ThreeTapsLocation objects <br>
+for (ThreeTapsResult result : query.results) {<br>
+  println(result);<br>
+//if the ThreeTapsResult has a valid location, that will be stored in the location object<br>
+  if (result.location != null) print(result.location); <br>
 } 
