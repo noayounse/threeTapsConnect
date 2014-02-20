@@ -1,4 +1,4 @@
-ThreeTapsP5
+ThreeTapsConnect
 ===========
 
 3Taps + Processing
@@ -34,7 +34,7 @@ ThreeTaps.query(query);
 
 // extract the ThreeTapsResult and ThreeTapsLocation objects <br>
 for (ThreeTapsResult result : query.results) {<br>
-  println(result);<br>
-//if the ThreeTapsResult has a valid location, that will be stored in the location object<br>
-  if (result.location != null) print(result.location); <br>
+  &nbsp;&nbsp;println(result);<br>
+&nbsp;&nbsp;//if the ThreeTapsResult has a valid location, that will be stored in the location object<br>
+  &nbsp;&nbsp;if (result.location != null) print(result.location); <br>
 } 
