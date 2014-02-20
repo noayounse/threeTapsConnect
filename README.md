@@ -8,16 +8,16 @@ ThreeTapsP5
 
 Some quick instructions
 
-// import the library
+// import the library<br>
 import threeTapsConnect.*; 
 
-// initiate it in the setup() 
+// initiate it in the setup() <br>
 ThreeTaps.init(this); 
 
-// set the API key. get one from here 
+// set the API key. get one from here <br>
 ThreeTaps.setAPIKey("INSERT API KEY HERE"); 
 
-// make a new ThreeTapsQuery object 
+// make a new ThreeTapsQuery object <br>
 ThreeTapsQuery query = new ThreeTapsQuery(); 
 
 // the basic search params. see the docs and/or example for more details 
