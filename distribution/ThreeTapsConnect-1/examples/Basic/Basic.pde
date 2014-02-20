@@ -1,5 +1,5 @@
 // import the library
-import threeTapsP5.*;
+import threeTapsConnect.*;
 
 void setup() {
   // initiate the library
